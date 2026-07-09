@@ -23,7 +23,13 @@ repositories {
 }
 
 dependencies {
-    testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    // API для написания тестов
+    testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.3")
+    // Среда выполнения (движок)
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.0.3")
+    // Опционально: мост для запуска тестов JUnit 4 (если есть такие)
+    // testRuntimeOnly("org.junit.vintage:junit-vintage-engine:6.0.3")
     testImplementation("com.codeborne:selenide:7.15.0")
 }
 
